@@ -2,6 +2,9 @@ class Message < ApplicationRecord
     belongs_to :room
     belongs_to :user
 
+    validates :content, presence: true
+end
+
     def change
         create_table :messages do |t|
             t.string :content
@@ -10,4 +13,4 @@ class Message < ApplicationRecord
             t.timestamps
         end
     end
-end
+
